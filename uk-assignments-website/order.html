@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - Bravin Morara</title>
+    <meta name="description" content="Place your order for academic writing help. Get instant quote from Bravin Morara.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <style>
+        :root { --primary-color: #dc3545; --accent-color: #c82333; --dark-bg: #842029; }
+        body { font-family: 'Roboto', sans-serif; background: #f8f9fa; }
+        .logo-text { font-family: 'Lato', sans-serif; font-weight: 900; font-size: 24px; color: #fff; }
+        .logo-text span { color: var(--accent-color); }
+        .navbar { background: rgba(132, 32, 41, 0.95) !important; }
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; z-index: 1000; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+        .order-form { background: #fff; border-radius: 20px; padding: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .form-section { background: var(--primary-color); color: #fff; padding: 20px; border-radius: 15px; margin-bottom: 20px; }
+        .whatsapp-order-btn { background: #25d366; border: none; color: #fff; font-weight: 700; padding: 15px 30px; border-radius: 30px; width: 100%; transition: transform 0.3s; }
+        .whatsapp-order-btn:hover { transform: scale(1.05); background: #1ebe5d; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <span class="logo-text">Bravin<span>Morara</span></span>
+            </a>
+        </div>
+    </nav>
+
+    <section class="py-5" style="margin-top: 80px;">
+        <div class="container">
+            <h1 class="text-center mb-2" data-aos="fade-up">Check Price & Order</h1>
+            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">Get your instant quote - Your quote is based on three main factors: Service type, Academic level, and Deadline</p>
+
+            <div class="order-form" data-aos="fade-up" data-aos-delay="200">
+                <form id="orderForm">
+                    <div class="form-section">
+                        <h4><i class="fas fa-file-alt me-2"></i>Step 1: Choose Service</h4>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Service Type *</label>
+                            <select class="form-select" id="serviceType" required>
+                                <option value="">Select service</option>
+                                <option value="assignment">Assignment Writing</option>
+                                <option value="essay">Essay Writing</option>
+                                <option value="dissertation">Dissertation Help</option>
+                                <option value="coursework">Coursework Help</option>
+                                <option value="editing">Proofreading & Editing</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Paper Type *</label>
+                            <select class="form-select" id="paperType" required>
+                                <option value="">Select paper type</option>
+                                <option>Essay</option>
+                                <option>Research Paper</option>
+                                <option>Case Study</option>
+                                <option>Literature Review</option>
+                                <option>Dissertation</option>
+                                <option>Report</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h4><i class="fas fa-graduation-cap me-2"></i>Step 2: Academic Details</h4>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Academic Level *</label>
+                            <select class="form-select" id="academicLevel" required>
+                                <option value="">Select level</option>
+                                <option value="undergraduate">Undergraduate</option>
+                                <option value="masters">Master's</option>
+                                <option value="phd">PhD</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Deadline *</label>
+                            <select class="form-select" id="deadline" required>
+                                <option value="">Select deadline</option>
+                                <option value="3">3 hours</option>
+                                <option value="6">6 hours</option>
+                                <option value="12">12 hours</option>
+                                <option value="24">24 hours</option>
+                                <option value="48">48 hours</option>
+                                <option value="7days">7 days</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h4><i class="fas fa-calculator me-2"></i>Step 3: Word Count</h4>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Word Count * (minimum 100 words)</label>
+                            <input type="number" class="form-control" id="wordCount" min="100" placeholder="e.g., 2500" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Referencing Style</label>
+                            <select class="form-select" id="referencingStyle">
+                                <option>APA</option>
+                                <option>MLA</option>
+                                <option>Harvard</option>
+                                <option>Chicago</option>
+                                <option>Oxford</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Assignment Details</label>
+                        <textarea class="form-control" rows="4" placeholder="Please provide any specific requirements..."></textarea>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary btn-lg mb-3" style="width: 100%;" onclick="calculatePrice()">Calculate Price</button>
+                    </div>
+                </form>
+
+                <div id="priceResult" class="text-center mt-4 d-none" data-aos="zoom-in">
+                    <h3>Your Estimated Price: $<span id="finalPrice" style="color: var(--primary-color); font-size: 40px; font-weight: 900;">0.00</span></h3>
+                    <p class="text-muted">Click below to contact Bravin Morara on WhatsApp to place your order</p>
+                    <a href="https://wa.me/254714030732?text=Hello%20Bravin%20Morara%2C%20I%20would%20like%20to%20place%20an%20order.%20My%20estimated%20price%20is%20" id="whatsappBtn" class="whatsapp-order-btn">
+                        <i class="fab fa-whatsapp me-2"></i>Proceed to Order on WhatsApp
+                    </a>
+                    <div class="mt-3">
+                        <a href="index.html" class="btn btn-outline-secondary">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="whatsapp-float">
+        <a href="https://wa.me/254714030732" target="_blank" class="btn btn-success rounded-circle shadow-lg" style="width: 60px; height: 60px;">
+            <i class="fab fa-whatsapp fa-2x"></i>
+        </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+        
+        function calculatePrice() {
+            const wordCount = parseInt(document.getElementById('wordCount').value) || 250;
+            const level = document.getElementById('academicLevel').value;
+            const deadline = document.getElementById('deadline').value;
+            
+            // Base price $16.88 reduced by 20% = $13.50 per 250 words
+            let basePrice = 13.50 / 250;
+            
+            if (level === 'masters') basePrice *= 1.3;
+            if (level === 'phd') basePrice *= 1.6;
+            
+            if (deadline === '3') basePrice *= 2.5;
+            else if (deadline === '6') basePrice *= 2;
+            else if (deadline === '12') basePrice *= 1.8;
+            else if (deadline === '24') basePrice *= 1.5;
+            else if (deadline === '48') basePrice *= 1.3;
+            else if (deadline === '7days') basePrice *= 1.1;
+            
+            const price = (wordCount * basePrice).toFixed(2);
+            document.getElementById('finalPrice').textContent = price;
+            
+            const whatsappLink = document.getElementById('whatsappBtn');
+            whatsappLink.href = 'https://wa.me/254714030732?text=Hello%20Bravin%20Morara%2C%20I%20would%20like%20to%20place%20an%20order.%20My%20estimated%20price%20is%20%24' + price;
+            
+            document.getElementById('priceResult').classList.remove('d-none');
+            document.getElementById('priceResult').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

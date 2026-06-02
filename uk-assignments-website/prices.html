@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prices - Bravin Morara</title>
+    <meta name="description" content="Transparent pricing for academic writing help. Prices start from $13.50 per 250 words.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <style>
+        :root { --primary-color: #dc3545; --accent-color: #c82333; --dark-bg: #842029; }
+        .logo-text { font-family: 'Lato', sans-serif; font-weight: 900; font-size: 24px; color: #fff; }
+        .logo-text span { color: var(--accent-color); }
+        .navbar { background: var(--dark-bg) !important; }
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; z-index: 1000; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+        footer { background: var(--dark-bg); color: #fff; padding: 40px 0 20px; }
+        .price-card { background: #fff; border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; border: 2px solid var(--primary-color); }
+        .price-card:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <span class="logo-text">Bravin<span>Morara</span></span>
+            </a>
+        </div>
+    </nav>
+
+    <section class="py-5" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-bg) 100%); min-height: 100vh;" data-aos="fade-in">
+        <div class="container">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bold mb-4" data-aos="fade-down">Transparent Pricing</h1>
+                <p class="lead mb-5" data-aos="fade-up" data-aos-delay="100">Get a fast, no-obligation quote based on your exact requirements.</p>
+                <div class="price-card d-inline-block" data-aos="zoom-in" data-aos-delay="200">
+                    <span class="badge mb-3" style="background: var(--accent-color); font-size: 14px;">Starting From</span>
+                    <h2 class="display-3 fw-bold" style="color: var(--accent-color);">$13.50</h2>
+                    <p class="lead">per 250 words</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Price Factors Explained</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="flip-left" data-aos-delay="100">
+                    <div class="card h-100 p-3">
+                        <div class="card-body">
+                            <h4><i class="fas fa-file-alt text-danger me-2"></i>Service Type</h4>
+                            <p>Writing from scratch, editing, proofreading, dissertation sections, and more.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="flip-left" data-aos-delay="200">
+                    <div class="card h-100 p-3">
+                        <div class="card-body">
+                            <h4><i class="fas fa-graduation-cap text-danger me-2"></i>Academic Level</h4>
+                            <p>Undergraduate, Master's, and PhD work are priced differently.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="flip-left" data-aos-delay="300">
+                    <div class="card h-100 p-3">
+                        <div class="card-body">
+                            <h4><i class="fas fa-clock text-danger me-2"></i>Deadline & Word Count</h4>
+                            <p>Urgent deadlines and longer assignments affect the final quote.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4" data-aos="fade-up">
+                <a href="order.html" class="btn btn-primary btn-lg">Get My Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="whatsapp-float">
+        <a href="https://wa.me/254714030732" target="_blank" class="btn btn-success rounded-circle shadow-lg" style="width: 60px; height: 60px;">
+            <i class="fab fa-whatsapp fa-2x"></i>
+        </a>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <p>© 2026 Bravin Morara. All rights reserved.</p>
+            <div>
+                <a href="https://wa.me/254714030732" target="_blank" class="text-white mx-2"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/bravi451_?igsh=ZnBqb2lncHYyNHNi&utm_source=qr" target="_blank" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+</html>

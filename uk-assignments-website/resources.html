@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Bravin Morara</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <style>
+        :root { --primary-color: #dc3545; --accent-color: #c82333; --dark-bg: #842029; }
+        .logo-text { font-family: 'Lato', sans-serif; font-weight: 900; font-size: 24px; color: #fff; }
+        .logo-text span { color: var(--accent-color); }
+        .navbar { background: var(--dark-bg) !important; }
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; z-index: 1000; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+        footer { background: var(--dark-bg); color: #fff; padding: 40px 0 20px; }
+        .resource-card { background: #fff; border-radius: 15px; padding: 25px; margin-bottom: 20px; border-left: 4px solid var(--primary-color); transition: transform 0.3s; }
+        .resource-card:hover { transform: translateX(10px); }
+        .resource-card i { font-size: 30px; color: var(--primary-color); margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <span class="logo-text">Bravin<span>Morara</span></span>
+            </a>
+        </div>
+    </nav>
+
+    <section class="py-5" style="margin-top: 100px;">
+        <div class="container">
+            <h1 class="text-center mb-5" data-aos="fade-down">Student Resources - Bravin Morara</h1>
+            
+            <div class="resource-card" data-aos="fade-right" data-aos-delay="50">
+                <h3><i class="fas fa-book me-2"></i>Writing Guides</h3>
+                <p>Comprehensive guides on academic writing, structure, and best practices. Learn how to write better essays and assignments.</p>
+            </div>
+            
+            <div class="resource-card" data-aos="fade-right" data-aos-delay="100">
+                <h3><i class="fas fa-quote-right me-2"></i>Referencing Guides</h3>
+                <p>Learn about APA, MLA, Harvard, Chicago, and other referencing styles. Get examples and templates.</p>
+            </div>
+            
+            <div class="resource-card" data-aos="fade-right" data-aos-delay="150">
+                <h3><i class="fas fa-lightbulb me-2"></i>Essay Tips</h3>
+                <p>Proven tips to improve your essay writing skills. From planning to final proofreading.</p>
+            </div>
+            
+            <div class="resource-card" data-aos="fade-right" data-aos-delay="200">
+                <h3><i class="fas fa-file-word me-2"></i>Dissertation Tips</h3>
+                <p>Guidance on dissertation structure, research methodology, and writing techniques.</p>
+            </div>
+            
+            <div class="resource-card" data-aos="fade-right" data-aos-delay="250">
+                <h3><i class="fas fa-question-circle me-2"></i>FAQ</h3>
+                <p>Frequently asked questions about our services, pricing, and ordering process.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="whatsapp-float">
+        <a href="https://wa.me/254714030732" target="_blank" class="btn btn-success rounded-circle shadow-lg" style="width: 60px; height: 60px;">
+            <i class="fab fa-whatsapp fa-2x"></i>
+        </a>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <p>© 2026 Bravin Morara. All rights reserved.</p>
+            <div>
+                <a href="https://wa.me/254714030732" target="_blank" class="text-white mx-2"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/bravi451_?igsh=ZnBqb2lncHYyNHNi&utm_source=qr" target="_blank" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+</html>

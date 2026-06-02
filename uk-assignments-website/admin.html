@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Bravin Morara</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root { --primary-color: #dc3545; --dark-bg: #842029; }
+        .logo-text { font-family: 'Lato', sans-serif; font-weight: 900; font-size: 24px; color: #fff; }
+        .logo-text span { color: var(--primary-color); }
+        .stat-card { background: var(--primary-color); color: #fff; padding: 20px; border-radius: 10px; }
+        .stat-card h3 { font-size: 2.5rem; margin-bottom: 0; }
+        .order-table { background: #fff; border-radius: 10px; overflow: hidden; }
+        .order-table th { background: var(--dark-bg); color: #fff; }
+        .order-table tr:nth-child(even) { background: #f8f9fa; }
+        .login-section { background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-bg) 100%); min-height: 100vh; display: flex; align-items: center; }
+        body { background: #f8f9fa; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-dark" style="background: var(--dark-bg);">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <span class="logo-text">Bravin<span>Morara</span></span>
+            </a>
+            <span class="text-white">Admin Dashboard</span>
+        </div>
+    </nav>
+
+    <section class="login-section" id="loginSection">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body p-4">
+                            <h3 class="text-center mb-4">Admin Login</h3>
+                            <form id="adminLoginForm">
+                                <div class="mb-3">
+                                    <input type="password" class="form-control" id="adminKey" placeholder="Admin Key" required>
+                                </div>
+                                <button type="submit" class="btn w-100" style="background: var(--primary-color); color: #fff;">Login</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="dashboardSection" class="d-none">
+        <section class="py-5">
+            <div class="container">
+                <h1 class="mb-4">Admin Dashboard</h1>
+                
+                <!-- Statistics -->
+                <div class="row mb-4">
+                    <div class="col-md-3 mb-3" data-aos="fade-up" data-aos-delay="50">
+                        <div class="stat-card text-center">
+                            <i class="fas fa-users fa-2x mb-2"></i>
+                            <h3 id="userCount">0</h3>
+                            <p>Total Users</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="stat-card text-center">
+                            <i class="fas fa-shopping-cart fa-2x mb-2"></i>
+                            <h3 id="orderCount">0</h3>
+                            <p>Total Orders</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="stat-card text-center">
+                            <i class="fas fa-dollar-sign fa-2x mb-2"></i>
+                            <h3 id="totalRevenue">0</h3>
+                            <p>Total Revenue ($)</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="stat-card text-center">
+                            <i class="fas fa-chart-line fa-2x mb-2"></i>
+                            <h3 id="avgOrder">$0</h3>
+                            <p>Avg Order Value</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Row -->
+                <div class="row mb-4">
+                    <div class="col-md-6 mb-3" data-aos="fade-right">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Orders by Service Type</h5>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="serviceChart" style="height: 200px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3" data-aos="fade-left">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Revenue Over Time</h5>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="revenueChart" style="height: 200px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Orders Table -->
+                <div class="card" data-aos="fade-up">
+                    <div class="card-header">
+                        <h4 class="mb-0">Recent Orders</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table order-table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>User</th>
+                                        <th>Service</th>
+                                        <th>Level</th>
+                                        <th>Words</th>
+                                        <th>Price ($)</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ordersTable">
+                                    <tr><td colspan="7" class="text-center">Loading orders...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+        
+        const ADMIN_KEY = 'bravin-admin-2026';
+        let ordersData = [];
+        
+        document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const key = document.getElementById('adminKey').value;
+            
+            if (key === ADMIN_KEY) {
+                document.getElementById('loginSection').classList.add('d-none');
+                document.getElementById('dashboardSection').classList.remove('d-none');
+                loadDashboard();
+            } else {
+                alert('Invalid admin key');
+            }
+        });
+
+        async function loadDashboard() {
+            // Load stats
+            try {
+                const statsRes = await fetch('http://localhost:3000/api/admin/stats', {
+                    headers: { 'x-admin-key': ADMIN_KEY }
+                });
+                const stats = await statsRes.json();
+                document.getElementById('userCount').textContent = stats.users;
+                document.getElementById('orderCount').textContent = stats.orders;
+                document.getElementById('totalRevenue').textContent = stats.revenue.toFixed(2);
+                document.getElementById('avgOrder').textContent = stats.orders > 0 ? '$' + (stats.revenue / stats.orders).toFixed(2) : '$0';
+            } catch (e) {
+                console.log('Backend not connected');
+            }
+
+            // Load orders
+            try {
+                const ordersRes = await fetch('http://localhost:3000/api/admin/orders', {
+                    headers: { 'x-admin-key': ADMIN_KEY }
+                });
+                ordersData = await ordersRes.json();
+                renderOrders(ordersData);
+                renderCharts(ordersData);
+            } catch (e) {
+                // Show sample data if backend not available
+                ordersData = [
+                    { id: 1, name: 'John Doe', email: 'john@example.com', service_type: 'Essay', academic_level: 'undergraduate', word_count: 2500, price: 135.00, created_at: '2026-06-01' },
+                    { id: 2, name: 'Jane Smith', email: 'jane@example.com', service_type: 'Dissertation', academic_level: 'masters', word_count: 10000, price: 500.00, created_at: '2026-06-15' },
+                    { id: 3, name: 'Bob Wilson', email: 'bob@example.com', service_type: 'Assignment', academic_level: 'phd', word_count: 5000, price: 600.00, created_at: '2026-06-20' }
+                ];
+                renderOrders(ordersData);
+                renderCharts(ordersData);
+            }
+        }
+
+        function renderOrders(orders) {
+            const tbody = document.getElementById('ordersTable');
+            if (!orders || orders.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="7" class="text-center">No orders found</td></tr>';
+                return;
+            }
+            
+            tbody.innerHTML = orders.map(order => `
+                <tr>
+                    <td>${order.id}</td>
+                    <td>${order.name}<br><small>${order.email || ''}</small></td>
+                    <td>${order.service_type || order.serviceType}</td>
+                    <td>${order.academic_level || order.academicLevel}</td>
+                    <td>${order.word_count || order.wordCount}</td>
+                    <td>$${order.price}</td>
+                    <td>${order.created_at ? new Date(order.created_at).toLocaleDateString() : ''}</td>
+                </tr>
+            `).join('');
+        }
+
+        function renderCharts(orders) {
+            if (!orders || orders.length === 0) return;
+            
+            // Service type chart
+            const serviceCounts = {};
+            orders.forEach(o => {
+                const service = o.service_type || o.serviceType;
+                serviceCounts[service] = (serviceCounts[service] || 0) + 1;
+            });
+            
+            const serviceCtx = document.getElementById('serviceChart').getContext('2d');
+            new Chart(serviceCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(serviceCounts),
+                    datasets: [{
+                        data: Object.values(serviceCounts),
+                        backgroundColor: ['#dc3545', '#842029', '#ff6b6b', '#c82333', '#ffcc00']
+                    }]
+                },
+                options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+            });
+
+            // Revenue chart
+            const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+            new Chart(revenueCtx, {
+                type: 'line',
+                data: {
+                    labels: orders.map(o => new Date(o.created_at || Date.now()).toLocaleDateString()),
+                    datasets: [{
+                        label: 'Order Value ($)',
+                        data: orders.map(o => o.price),
+                        borderColor: '#dc3545',
+                        backgroundColor: 'rgba(220, 53, 69, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: { responsive: true, plugins: { legend: { display: false } } }
+            });
+        }
+    </script>
+</body>
+</html>

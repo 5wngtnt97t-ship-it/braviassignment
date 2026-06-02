@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Bravin Morara</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <style>
+        :root { --primary-color: #dc3545; --accent-color: #c82333; --dark-bg: #842029; }
+        .logo-text { font-family: 'Lato', sans-serif; font-weight: 900; font-size: 24px; color: #fff; }
+        .logo-text span { color: var(--accent-color); }
+        .navbar { background: var(--dark-bg) !important; }
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; z-index: 1000; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+        footer { background: var(--dark-bg); color: #fff; padding: 40px 0 20px; }
+        .service-card { background: #fff; border-radius: 20px; padding: 30px; margin-bottom: 20px; height: 100%; transition: transform 0.3s; border-top: 4px solid var(--primary-color); }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+        .service-card i { font-size: 50px; color: var(--primary-color); margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <span class="logo-text">Bravin<span>Morara</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="how-it-works.html">How It Works</a></li>
+                    <li class="nav-item"><a class="nav-link" href="prices.html">Prices</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5" style="margin-top: 100px;">
+        <div class="container">
+            <h1 class="text-center mb-5" data-aos="fade-up">Our Academic Writing Services</h1>
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="flip-left" data-aos-delay="50">
+                    <div class="service-card text-center">
+                        <i class="fas fa-file-alt"></i>
+                        <h3>Assignment Writing</h3>
+                        <p>Professional help for all assignment types, tailored to your brief and deadline.</p>
+                        <a href="order.html" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="flip-left" data-aos-delay="100">
+                    <div class="service-card text-center">
+                        <i class="fas fa-pen"></i>
+                        <h3>Essay Writing</h3>
+                        <p>Expert essay writing from undergraduate to PhD level.</p>
+                        <a href="order.html" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="flip-left" data-aos-delay="150">
+                    <div class="service-card text-center">
+                        <i class="fas fa-book"></i>
+                        <h3>Dissertation Help</h3>
+                        <p>Full dissertation support including research and writing.</p>
+                        <a href="order.html" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="flip-left" data-aos-delay="200">
+                    <div class="service-card text-center">
+                        <i class="fas fa-tasks"></i>
+                        <h3>Coursework Help</h3>
+                        <p>Complete coursework assistance across all subjects.</p>
+                        <a href="order.html" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="flip-left" data-aos-delay="250">
+                    <div class="service-card text-center">
+                        <i class="fas fa-spell-check"></i>
+                        <h3>Proofreading & Editing</h3>
+                        <p>Polish your work to perfection with our editing services.</p>
+                        <a href="order.html" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="flip-left" data-aos-delay="300">
+                    <div class="service-card text-center">
+                        <i class="fas fa-home"></i>
+                        <h3>Homework Help</h3>
+                        <p>Reliable homework assistance for all academic levels.</p>
+                        <a href="order.html" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="whatsapp-float">
+        <a href="https://wa.me/254714030732" target="_blank" class="btn btn-success rounded-circle shadow-lg" style="width: 60px; height: 60px;">
+            <i class="fab fa-whatsapp fa-2x"></i>
+        </a>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <p>© 2026 Bravin Morara. All rights reserved.</p>
+            <div>
+                <a href="https://wa.me/254714030732" target="_blank" class="text-white mx-2"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/bravi451_?igsh=ZnBqb2lncHYyNHNi&utm_source=qr" target="_blank" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+</html>

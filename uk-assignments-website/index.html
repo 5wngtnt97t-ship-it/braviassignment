@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bravin Morara - Academic Writing Help for Students Worldwide</title>
+    <meta name="description" content="Get trusted academic writing help for essays, coursework, dissertations and editing. Confidential, plagiarism-checked and on time.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <style>
+        :root {
+            --primary-color: #dc3545;
+            --accent-color: #c82333;
+            --dark-bg: #842029;
+            --light-red: #f8d7da;
+        }
+        body { font-family: 'Roboto', sans-serif; color: #495057; overflow-x: hidden; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Lato', sans-serif; }
+        .navbar-brand img { height: 40px; }
+        .navbar-nav .nav-link { color: #fff; font-weight: 500; margin: 0 10px; transition: color 0.3s; }
+        .navbar-nav .nav-link:hover { color: var(--accent-color); }
+        .btn-primary { background-color: var(--primary-color); border: none; color: #fff; font-weight: 700; padding: 12px 30px; border-radius: 30px; text-transform: uppercase; transition: all 0.3s; }
+        .btn-primary:hover { background-color: #fff; color: var(--primary-color); border: 2px solid var(--primary-color); transform: translateY(-2px); }
+        .btn-outline-light:hover { background-color: var(--primary-color); border-color: var(--primary-color); transform: translateY(-2px); }
+        .fixed-order-btn { position: fixed; right: -75px; top: 50%; transform: rotate(-90deg); z-index: 1000; transition: all 0.3s; }
+        .fixed-order-btn:hover { right: -70px; transform: rotate(-90deg) scale(1.05); }
+        .bannersection { 
+            background: linear-gradient(135deg, #dc3545 0%, #842029 100%); 
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            position: relative;
+            overflow: hidden;
+        }
+        .bannersection::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23ffffff" opacity="0.1"/></svg>');
+            background-size: 50px 50px;
+            animation: float 20s infinite linear;
+        }
+        @keyframes float { from { transform: translateY(0); } to { transform: translateY(-50px); } }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        .feature-box { background: #fff; padding: 30px; border-radius: 20px; margin-bottom: 20px; height: 100%; text-align: center; transition: transform 0.3s; border: 2px solid transparent; }
+        .feature-box:hover { transform: translateY(-15px) scale(1.02); border-color: var(--primary-color); box-shadow: 0 10px 30px rgba(220, 53, 69, 0.2); }
+        .feature-box .icon-wrapper { width: 80px; height: 80px; margin: 0 auto 20px; background: var(--light-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .feature-box .icon-wrapper i { font-size: 35px; color: var(--primary-color); }
+        .service-block { background: #fff; border-radius: 20px; padding: 25px; margin: 10px; height: 100%; border-top: 5px solid var(--primary-color); transition: transform 0.3s; }
+        .service-block:hover { transform: translateY(-10px); }
+        .university-logos img { max-height: 60px; filter: grayscale(100%); transition: filter 0.3s; }
+        .university-logos img:hover { filter: grayscale(0%); }
+        .testimonial-box { background: #fff; border: 1px solid #eee; border-radius: 15px; padding: 25px; margin: 10px; height: 100%; transition: transform 0.3s; }
+        .testimonial-box:hover { transform: translateY(-5px); }
+        .testimonial-box .stars { color: #ffc107; margin-bottom: 15px; }
+        .trust-badge { display: flex; align-items: center; margin: 10px 0; }
+        .trust-badge i { font-size: 24px; color: var(--primary-color); margin-right: 10px; }
+        footer { background: var(--dark-bg); color: #fff; padding: 40px 0 20px; }
+        footer a { color: #fff; text-decoration: none; transition: color 0.3s; }
+        footer a:hover { color: var(--accent-color); }
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; z-index: 1000; animation: pulse 2s infinite; }
+        .whatsapp-float a { width: 60px; height: 60px; }
+        .swiper-slide { height: auto; }
+        .logo-text { font-family: 'Lato', sans-serif; font-weight: 900; font-size: 28px; color: #fff; }
+        .logo-text span { color: var(--accent-color); }
+        .navbar-toggler { border: none; }
+        .navbar-toggler:focus { box-shadow: none; }
+        .step-icon { font-size: 50px; color: var(--primary-color); margin-bottom: 15px; }
+        .stat-number { font-size: 3rem; font-weight: 900; color: var(--primary-color); font-family: 'Lato', sans-serif; }
+        .launch-animation { animation: slideInFromTop 1s ease-out; }
+        @keyframes slideInFromTop { from { opacity: 0; transform: translateY(-50px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { animation: fadeIn 1s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top launch-animation" style="background: rgba(132, 32, 41, 0.95);">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <span class="logo-text">Bravin<span>Morara</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="how-it-works.html">How It Works</a></li>
+                    <li class="nav-item"><a class="nav-link" href="prices.html">Prices</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <a href="login.html" class="btn btn-outline-light">Sign In</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bannersection">
+        <div class="container position-relative" style="z-index: 1;">
+            <div class="row align-items-center">
+                <div class="col-lg-6 fade-in">
+                    <h1 class="display-4 fw-bold text-white mb-4">Bravin Morara - Academic Writing Help You Can Trust</h1>
+                    <p class="lead text-white mb-4">Professional assignment writing help for students worldwide. Quality work, confidentiality, and on-time delivery. Support across essays, reports, coursework, dissertations, and editing.</p>
+                    <a href="order.html" class="btn btn-primary btn-lg">Check Price & Order</a>
+                </div>
+                <div class="col-lg-6 text-center fade-in" data-aos="zoom-in" data-aos-delay="200">
+                    <div style="position: relative; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 50%; max-width: 400px; margin: 0 auto;">
+                        <div style="font-size: 120px; font-weight: 900; color: #fff; font-family: 'Lato', sans-serif;">
+                            BM<span style="color: var(--accent-color);">.</span>
+                        </div>
+                        <div style="position: absolute; top: 0; right: 30px; background: var(--accent-color); color: #fff; padding: 10px 20px; border-radius: 30px; font-weight: 700;">UK</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h2 class="mb-4">Why Choose Bravin Morara</h2>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-check-circle text-danger me-2"></i> Trusted service since 2011</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-danger me-2"></i> 17,000+ assignments completed</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-danger me-2"></i> MA and PhD-qualified writers</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-danger me-2"></i> Plagiarism-free and confidential</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-danger me-2"></i> On-time delivery with free revisions</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 class="mb-4">What You Get</h2>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-check-circle text-danger me-2"></i> Fully tailored to your brief</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-danger me-2"></i> Accurate referencing</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-danger me-2"></i> Plagiarism-checked work</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-danger me-2"></i> On-time delivery</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-danger me-2"></i> Support across all subjects</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">What You Get With Our Service</h2>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-box">
+                        <div class="icon-wrapper"><i class="fas fa-file-alt"></i></div>
+                        <h3>Plagiarism-Free Work</h3>
+                        <p>Every paper is written from scratch and checked for originality before delivery.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-box">
+                        <div class="icon-wrapper"><i class="fas fa-clock"></i></div>
+                        <h3>On-Time Delivery</h3>
+                        <p>Your assignment is delivered by the agreed deadline, with free revisions within scope.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-box">
+                        <div class="icon-wrapper"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Confidential & Secure</h3>
+                        <p>Your personal details and files are protected through a secure and confidential process.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4" data-aos="fade-up">How Pricing Works</h2>
+            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">Your quote is based on three main factors:</p>
+            <div class="row">
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="service-block text-center">
+                        <div class="service-block-icon">
+                            <span class="stat-number">01</span>
+                        </div>
+                        <h4>Service & Paper Type</h4>
+                        <p>Choose your service and paper type to get started.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="service-block text-center">
+                        <div class="service-block-icon">
+                            <span class="stat-number">02</span>
+                        </div>
+                        <h4>Academic Level & Deadline</h4>
+                        <p>Select your academic level and deadline for an accurate quote.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="service-block text-center">
+                        <div class="service-block-icon">
+                            <span class="stat-number">03</span>
+                        </div>
+                        <h4>Word Count & Extras</h4>
+                        <p>Add your word count and any extras to confirm the final price.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4" data-aos="fade-up">
+                <p class="lead">Prices start from $13.50 per 250 words.</p>
+                <a href="order.html" class="btn btn-primary mt-3">Get My Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="text-center">
+                        <div style="width: 200px; height: 200px; background: var(--primary-color); border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; font-size: 60px; color: #fff; font-weight: 900; font-family: 'Lato', sans-serif;">BM</div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 class="mb-4">Transparent Pricing</h2>
+                    <p class="lead mb-4">Prices start from £16.88 per 250 words. Your final quote depends on service type, academic level, deadline, and word count.</p>
+                    <a href="order.html" class="btn btn-primary">Get My Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">How It Works</h2>
+            <div class="row">
+                <div class="col-md-2" data-aos="fade-up" data-aos-delay="50">
+                    <div class="text-center p-3">
+                        <i class="fas fa-file-upload step-icon"></i>
+                        <p>Send your brief, deadline, and word count</p>
+                    </div>
+                </div>
+                <div class="col-md-2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center p-3">
+                        <i class="fas fa-quote-left step-icon"></i>
+                        <p>Receive your quote and timeline</p>
+                    </div>
+                </div>
+                <div class="col-md-2" data-aos="fade-up" data-aos-delay="150">
+                    <div class="text-center p-3">
+                        <i class="fas fa-user-tie step-icon"></i>
+                        <p>We match your order to the right writer</p>
+                    </div>
+                </div>
+                <div class="col-md-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center p-3">
+                        <i class="fas fa-pen-fancy step-icon"></i>
+                        <p>Your work is completed and quality-checked</p>
+                    </div>
+                </div>
+                <div class="col-md-2" data-aos="fade-up" data-aos-delay="250">
+                    <div class="text-center p-3">
+                        <i class="fas fa-check-double step-icon"></i>
+                        <p>Receive your assignment and request revisions</p>
+                    </div>
+                </div>
+                <div class="col-md-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-center p-3">
+                        <i class="fab fa-whatsapp step-icon" style="color: #25d366;"></i>
+                        <p>Contact us on WhatsApp to order</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Trusted by Students from Leading Universities</h2>
+            <div class="row university-logos justify-content-center">
+                <div class="col-4 col-md-2 text-center mb-3" data-aos="flip-left" data-aos-delay="50"><img src="https://www.uk-assignments.com/wp-content/uploads/2024/05/cllogo1.png" alt="Cambridge" class="img-fluid"></div>
+                <div class="col-4 col-md-2 text-center mb-3" data-aos="flip-left" data-aos-delay="100"><img src="https://www.uk-assignments.com/wp-content/uploads/2024/05/cllogo2.png" alt="Oxford" class="img-fluid"></div>
+                <div class="col-4 col-md-2 text-center mb-3" data-aos="flip-left" data-aos-delay="150"><img src="https://www.uk-assignments.com/wp-content/uploads/2024/05/cllogo3.png" alt="Edinburgh" class="img-fluid"></div>
+                <div class="col-4 col-md-2 text-center mb-3" data-aos="flip-left" data-aos-delay="200"><img src="https://www.uk-assignments.com/wp-content/uploads/2024/05/cllogo4.png" alt="York" class="img-fluid"></div>
+                <div class="col-4 col-md-2 text-center mb-3" data-aos="flip-left" data-aos-delay="250"><img src="https://www.uk-assignments.com/wp-content/uploads/2024/05/cllogo5.png" alt="UCL" class="img-fluid"></div>
+                <div class="col-4 col-md-2 text-center mb-3" data-aos="flip-left" data-aos-delay="300"><img src="https://www.uk-assignments.com/wp-content/uploads/2024/05/cllogo6.png" alt="Bath" class="img-fluid"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container text-center" data-aos="fade-up">
+            <h2 class="mb-5">Our Impact</h2>
+            <div class="row">
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-number">12+</div>
+                    <p class="lead">Years Supporting Students</p>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-number">17,000+</div>
+                    <p class="lead">Assignments Completed</p>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-number">12,000+</div>
+                    <p class="lead">Papers Proofread</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Student Testimonials</h2>
+            <div class="swiper mySwiper" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-box">
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p>"Excellent service! Bravin Morara delivered my assignment ahead of time with great quality. Highly recommended!"</p>
+                            <p><strong>- Sarah M., London</strong></p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-box">
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p>"Amazing work! Got 95% on my dissertation. The writer understood my requirements perfectly."</p>
+                            <p><strong>- James K., Manchester</strong></p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-box">
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p>"Fast, reliable and confidential. Communication was excellent throughout the process!"</p>
+                            <p><strong>- Grace N., Birmingham</strong></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4" data-aos="fade-up">Ready to Get Started?</h2>
+            <p class="mb-4" data-aos="fade-up" data-aos-delay="100">Contact Bravin Morara for professional academic writing help tailored to your brief and deadline.</p>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <a href="order.html" class="btn btn-primary">Check Price & Order</a>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <span class="logo-text" style="font-size: 24px;">Bravin<span>Morara</span></span>
+                    </div>
+                    <p>Professional academic writing help you can trust. Quality, confidentiality, and on-time delivery guaranteed.</p>
+                    <p>WhatsApp: +254 714 030 732</p>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="prices.html">Prices</a></li>
+                        <li><a href="services.html">Services</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Our Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="order.html">Assignment Writing</a></li>
+                        <li><a href="order.html">Essay Help</a></li>
+                        <li><a href="order.html">Dissertation</a></li>
+                        <li><a href="order.html">Coursework</a></li>
+                        <li><a href="order.html">Editing</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Connect With Us</h5>
+                    <div class="mt-3">
+                        <a href="https://wa.me/254714030732" target="_blank" class="text-white me-3" style="font-size: 24px;"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/bravi451_?igsh=ZnBqb2lncHYyNHNi&utm_source=qr" target="_blank" class="text-white" style="font-size: 24px;"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p class="mt-3">Follow us for updates and offers!</p>
+                </div>
+            </div>
+            <hr>
+            <div class="payment-trust-section text-center py-4">
+                <h4 class="mb-3">Secure Payment Methods</h4>
+                <div class="payment-icons d-flex justify-content-center flex-wrap mb-4">
+                    <img src="https://www.uk-assignments.com/management/public/backend/assets/images/card/Visa.svg" alt="Visa" height="30" class="mx-2">
+                    <img src="https://www.uk-assignments.com/management/public/backend/assets/images/card/Mastercard-logo.svg" alt="MasterCard" height="30" class="mx-2">
+                    <img src="https://www.uk-assignments.com/management/public/backend/assets/images/card/PayPal.svg" alt="PayPal" height="30" class="mx-2">
+                    <img src="https://www.uk-assignments.com/management/public/backend/assets/images/card/Stripe_Logo,_revised_2016.svg" alt="Stripe" height="30" class="mx-2">
+                </div>
+                <div class="trust-badges d-flex justify-content-center flex-wrap">
+                    <div class="trust-badge mx-3"><i class="fas fa-shield-alt"></i> SSL Secured</div>
+                    <div class="trust-badge mx-3"><i class="fas fa-lock"></i> Secure Files</div>
+                    <div class="trust-badge mx-3"><i class="fas fa-user-secret"></i> Confidential</div>
+                    <div class="trust-badge mx-3"><i class="fas fa-headset"></i> 24/7 Support</div>
+                </div>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <p class="mb-0">© 2026 Bravin Morara. All rights reserved.</p>
+                <div>
+                    <a href="#" class="me-3">Privacy Policy</a>
+                    <a href="#" class="me-3">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="whatsapp-float">
+        <a href="https://wa.me/254714030732" target="_blank" class="btn btn-success rounded-circle shadow-lg">
+            <i class="fab fa-whatsapp fa-2x"></i>
+        </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+        
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: { el: ".swiper-pagination", clickable: true },
+            breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } },
+            autoplay: { delay: 3000 },
+            loop: true
+        });
+
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(132, 32, 41, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
